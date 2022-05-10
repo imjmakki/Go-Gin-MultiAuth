@@ -1,8 +1,8 @@
 package main
 
 import (
+	"Multi-Auth/api"
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 func main() {
@@ -11,10 +11,8 @@ func main() {
 
 	public := r.Group("/api")
 
-	public.POST("/register", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"data": "this is the register endpoint!"})
-	})
+	public.POST("/register", api.Register)
 
-	r.Run(":8080")
+	r.Run(":9090")
 
 }
