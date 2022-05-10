@@ -2,10 +2,13 @@ package main
 
 import (
 	"Multi-Auth/api"
+	"Multi-Auth/entity"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+
+	entity.ConnectDataBase()
 
 	r := gin.Default()
 
