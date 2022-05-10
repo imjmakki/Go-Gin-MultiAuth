@@ -1,7 +1,7 @@
 package entity
 
 import (
-	"Multi-Auth/utils/token"
+	"Multi-Auth/utils"
 	"errors"
 	"html"
 	"strings"
@@ -56,7 +56,7 @@ func LoginCheck(username string, password string) (string, error) {
 		return "", err
 	}
 
-	token, err := token.GenerateToken(u.ID)
+	token, err := utils.GenerateToken(u.ID)
 
 	if err != nil {
 		return "", err

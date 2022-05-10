@@ -2,14 +2,14 @@ package api
 
 import (
 	"Multi-Auth/entity"
-	"Multi-Auth/utils/token"
+	"Multi-Auth/utils"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
 func CurrentUser(c *gin.Context) {
 
-	user_id, err := token.ExtractTokenID(c)
+	user_id, err := utils.ExtractTokenID(c)
 
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})

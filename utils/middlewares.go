@@ -1,7 +1,6 @@
-package middlewares
+package utils
 
 import (
-	"Multi-Auth/utils/token"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -9,7 +8,7 @@ import (
 
 func JwtAuthMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		err := token.TokenValid(c)
+		err := TokenValid(c)
 		if err != nil {
 			c.String(http.StatusUnauthorized, "Unauthorized")
 			c.Abort()
