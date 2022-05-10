@@ -15,6 +15,7 @@ func main() {
 	public := r.Group("/api")
 
 	public.POST("/register", api.Register)
+	public.POST("/login", api.Login)
 
 	r.Run(":9090")
 
